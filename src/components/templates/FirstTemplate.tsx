@@ -7,17 +7,46 @@ import LoveStory from "../molecules/LoveStory";
 import Protocol from "../molecules/Protocol";
 import WeddingEvent from "../molecules/WeddingEvent";
 import Gallery from "./../molecules/Gallery";
+import LazyImage from "../atom/LazyImage";
+import Cover from './../atom/Cover';
+import { useState, useEffect } from 'react';
 
 export const FirstTemplate = () => {
+
+  const [isScroll, setIsScroll] = useState<boolean>(false)
+
+
+  useEffect(() => {
+    disableScroll()
+  }, [])
+
+  const disableScroll = () => {
+    window.scrollTo(0, 0);
+   const  scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+   const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
+
+   window.onscroll = function() {
+    window.scrollTo(scrollLeft, scrollTop);
+};
+  }
+
+  const enabledScroll = () => {
+    window.onscroll = function() {};
+    setIsScroll(true)
+  }
+
   return (
-    <div className="overflow-hidden relative pb-40">
+    <div className="overflow-hidden  relative pb-40">
+      <Cover isScroll={isScroll} enabledScroll={enabledScroll} />
       <GiftModalButton />
       <div className="relative shadow-lg">
         <GiftModal />
-        <img
+        <LazyImage
+          width="100%"
           className="object-cover w-full h-screen"
           src="/assets/images/1.jpg"
         />
+
         <div
           style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
           className="absolute  justify-center items-center w-full  flex flex-col gap-10 h-full top-0"
@@ -38,12 +67,12 @@ export const FirstTemplate = () => {
           </div>
         </div>
       </div>
-      <article className="p-32 xs:px-10 ss:px-10   md:px-10 xs:py-20">
+      <article className="lg:p-32 xs:px-10 ss:px-10  md:px-10 xs:py-20">
         <div className="shadow-lg ss:shadow-none xs:shadow-none">
           <div className="grid-cols-2 grid xs:grid-cols-1 ss:grid-cols-1">
             <div>
-              <img
-                className="xl:h-[465px] md:h-full w-full object-top object-cover  "
+              <LazyImage
+                className="xl:h-[465px] md:h-full w-full object-top object-cover"
                 src="assets/images/6.jpg"
               />
             </div>
@@ -119,8 +148,8 @@ export const FirstTemplate = () => {
                 </div>
               </div>
               <div>
-                <img
-                  className="xl:h-[455px] md:h-full w-full  xl:object-cover "
+                <LazyImage
+                  className="xl:h-[455px] md:h-full w-full  xl:object-cover"
                   src="assets/images/7.jpg"
                 />
               </div>
@@ -132,7 +161,7 @@ export const FirstTemplate = () => {
         <Countdown />
       </section>
       <LoveStory />
-      <Protocol/>
+      <Protocol />
       <WeddingEvent />
       <Gallery />
       <GuestBox />

@@ -38,7 +38,7 @@ export const GiftModalButton = () => {
     <label
       style={{ left: "50%", right: "50%", transform: "translate(-50%,  -50%)" }}
       htmlFor="my-modal-3"
-      className="btn text fixed bottom-5 focus:bg-[#9CC2BB] bg-[#9CC2BB] w-32 border-none z-50   modal-button"
+      className="btn text fixed bottom-5 focus:bg-[#9CC2BB] bg-[#9CC2BB] w-32 border-none z-40   modal-button"
     >
       Kirim Hadiah
     </label>

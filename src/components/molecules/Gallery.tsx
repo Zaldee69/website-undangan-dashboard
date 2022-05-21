@@ -1,4 +1,5 @@
 import React from "react";
+import LazyImage from './../atom/LazyImage';
 
 const Gallery = () => {
   return (
@@ -9,14 +10,14 @@ const Gallery = () => {
         </p>
       </div>
       <div className="flex flex-row md:justify-center gap-3 mt-10 ss:justify-center xs:justify-center flex-wrap">
-        <img className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-200 object-cover cursor-pointer"  src="/assets/images/1.jpg" alt="" />
-        <img className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-200 object-cover cursor-pointer " src="/assets/images/2.jpg" alt="" />
-        <img className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-200 object-cover cursor-pointer " src="/assets/images/3.jpg" alt="" />
-        <img className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-200 object-cover cursor-pointer " src="/assets/images/4.jpg" alt="" />
-        <img className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-200 object-cover cursor-pointer " src="/assets/images/6.jpg" alt="" />
-        <img className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-200 object-cover cursor-pointer " src="/assets/images/7.jpg" alt="" />
-        <img className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-200 object-cover cursor-pointer " src="/assets/images/5.jpg" alt="" />
-        <img className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-200 object-cover cursor-pointer " src="/assets/images/5.jpg" alt="" />
+        <LazyImage src="/assets/images/1.jpg" className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-500 object-cover cursor-pointer"></LazyImage>
+        <LazyImage src="/assets/images/2.jpg" className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-500 object-cover cursor-pointer"></LazyImage>
+        <LazyImage src="/assets/images/3.jpg" className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-500 object-cover cursor-pointer"></LazyImage>
+        <LazyImage src="/assets/images/4.jpg" className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-500 object-cover cursor-pointer"></LazyImage>
+        <LazyImage src="/assets/images/5.jpg" className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-500 object-cover cursor-pointer"></LazyImage>
+        <LazyImage src="/assets/images/6.jpg" className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-500 object-cover cursor-pointer"></LazyImage>
+        <LazyImage src="/assets/images/7.jpg" className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-500 object-cover cursor-pointer"></LazyImage>
+        <LazyImage src="/assets/images/1.jpg" className="xl:w-72 md:w-80 h-64 ss:w-80 hover:scale-105 ease-in duration-500 object-cover cursor-pointer"></LazyImage>
       </div>
     </section>
   );
